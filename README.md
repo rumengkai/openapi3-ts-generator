@@ -1,7 +1,7 @@
 ## 介绍
-[![GitHub Repo stars](https://img.shields.io/github/stars/chenshuai2144/openapi2typescript?style=social)](https://github.com/chenshuai2144/openapi2typescript)
-[![npm (scoped)](https://img.shields.io/npm/v/@umijs/openapi)](https://www.npmjs.com/package/@umijs/openapi)
-![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/chenshuai2144/openapi2typescript?include_prereleases)
+[![GitHub Repo stars](https://img.shields.io/github/stars/rumengkai/openapi3-ts-generator?style=social)](https://github.com:rumengkai/openapi3-ts-generator)
+[![npm (scoped)](https://img.shields.io/npm/v/openapi3-ts-generator)](https://www.npmjs.com/package/openapi3-ts-generator)
+![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/rumengkai/openapi3-ts-generator?include_prereleases)
 
 根据 [OpenApi3](https://swagger.io/blog/news/whats-new-in-openapi-3-0/) 文档生成 request 请求代码。
 
