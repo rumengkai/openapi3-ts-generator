@@ -1,5 +1,5 @@
 ## 介绍
-[![GitHub Repo stars](https://img.shields.io/github/stars/rumengkai/openapi3-ts-generator?style=social)](https://github.com:rumengkai/openapi3-ts-generator)
+[![GitHub Repo stars](https://img.shields.io/github/stars/rumengkai/openapi3-ts-generator?style=social)](https://github.com/rumengkai/openapi3-ts-generator)
 [![npm (scoped)](https://img.shields.io/npm/v/openapi3-ts-generator)](https://www.npmjs.com/package/openapi3-ts-generator)
 ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/rumengkai/openapi3-ts-generator?include_prereleases)
 
