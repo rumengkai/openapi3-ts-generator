@@ -436,15 +436,16 @@ class ServiceGenerator {
               }
 
               // 为 path 中的 params 添加 alias
-              const escapedPathParams = ((params || {}).path || []).map((ele, index) => ({
-                ...ele,
-                alias: `param${index}`,
-              }));
-              if (escapedPathParams.length) {
-                escapedPathParams.forEach((param) => {
-                  formattedPath = formattedPath.replace(`$\{${param.name}}`, `$\{${param.alias}}`);
-                });
-              }
+              const escapedPathParams = ((params || {}).path || [])
+              // .map((ele, index) => ({
+              //   ...ele,
+              //   alias: `param${index}`,
+              // }));
+              // if (escapedPathParams.length) {
+              //   escapedPathParams.forEach((param) => {
+              //     formattedPath = formattedPath.replace(`$\{${param.name}}`, `$\{${param.alias}}`);
+              //   });
+              // }
 
               const finalParams =
                 escapedPathParams && escapedPathParams.length

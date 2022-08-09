@@ -58,7 +58,7 @@ export async function {{ api.functionName }}(
   options {{ "?: {[key: string]: any}" if genType === "ts" }}
 ) {
   {% if api.params and api.params.path -%}
-  const { {% for param in api.params.path %}'{{ param.name }}': {{ param.alias }}, {% endfor %}
+  const { {% for param in api.params.path %}{{ param.name }}, {% endfor %}
   {% if api.params.path -%}
   ...queryParams
   {% endif -%}
@@ -102,7 +102,7 @@ export async function {{ api.functionName }}(
     url: `{{ api.path }}`,
   {% endif -%}
     method: '{{ api.method | upper }}',
-    {%- if api.hasHeader and api.body.mediaType not in ["multipart/form-data", "application/x-www-form-urlencoded"]%}
+    {%- if api.hasHeader and api.body.mediaType not in ["application/json"]%}
     headers: {
       {%- if api.body.mediaType %}
       'Content-Type': '{{ api.body.mediaType | safe }}',

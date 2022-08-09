@@ -96,8 +96,9 @@ const openAPI = require('../dist/index');
 
 
 openAPI.generateService({
-  schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
-  serversPath: './src/servers',
-  mockFolder: './src/mock/api',
+  // schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
+  schemaPath: 'http://smart-ops-sbx.jd.local/v3/api-docs',
+  serversPath: './servers',
+  mockFolder: './mocks',
   // apiPrefix: '',
 });
