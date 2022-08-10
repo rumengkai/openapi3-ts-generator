@@ -373,11 +373,15 @@ class ServiceGenerator {
   public getFuncationName(data: APIDataType) {
     // 获取路径相同部分
     const pathBasePrefix = this.getBasePrefix(Object.keys(this.openAPIData.paths));
-    return this.config.hook && this.config.hook.customFunctionName
-      ? this.config.hook.customFunctionName(data)
-      : data.operationId
-      ? this.resolveFunctionName(stripDot(data.operationId), data.method)
-      : data.method + this.genDefaultFunctionName(data.path, pathBasePrefix);
+    let name =''
+    if (this.config.hook && this.config.hook.customFunctionName) {
+      name = this.config.hook.customFunctionName(data)
+    } else if (data.operationId){
+      name = this.resolveFunctionName(stripDot(data.operationId), data.method)
+    } else {
+      name = data.method + this.genDefaultFunctionName(data.path, pathBasePrefix);
+    }
+    return name
   }
 
   public getServiceTP() {
@@ -680,6 +684,7 @@ class ServiceGenerator {
       templateParams.path = templateParams.path || [];
       let match = null;
       while ((match = regex.exec(path))) {
+        // eslint-disable-next-line @typescript-eslint/no-loop-func
         if (!templateParams.path.some((p) => p.name === match[1])) {
           templateParams.path.push({
             ...DEFAULT_PATH_PARAM,
