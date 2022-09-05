@@ -128,9 +128,6 @@ export async function {{ api.functionName }}(
     {%- endif %}
     {%- if api.hasFormData %}
     data: formData,
-    {%- if api.body.mediaType === "multipart/form-data" %}
-    requestType: 'form',
-    {%- endif %}
     {%- else %}
     {%- if api.body %}
     data: body,
