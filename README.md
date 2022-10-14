@@ -21,7 +21,7 @@ generateService({
 ```
 在 ```package.json``` 的 ```script``` 中添加 openapi: 
 ```
-"openapi": "ts-node openapi.config.ts",
+"openapi": "node openapi.config.ts",
 ```
 
 生成api
@@ -40,3 +40,4 @@ npm run openapi
 | namespace  | 否 | 类型命名空间名称 | string | APITypes |
 | mockPath  | 否 | mock目录 | string | - |
 | enumStyle  | 否 | 枚举样式 | string-literal \| enum | string-literal |
+
