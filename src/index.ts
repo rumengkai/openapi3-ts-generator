@@ -37,7 +37,7 @@ export type GenerateServiceProps = {
   /**
    * 生成的文件夹的路径
    */
-  serversPath?: string;
+  servicesPath?: string;
   /**
    * openAPI 3.0 的地址
    */
@@ -57,7 +57,7 @@ export type GenerateServiceProps = {
   };
   namespace?: string;
 
-  mockFolder?: string;
+  mockPath?: string;
   /**
    * 模板文件的文件路径
    */
@@ -117,14 +117,14 @@ const getOpenAPIConfig = async (schemaPath: string) => {
 export const generateService = async ({
   requestLibPath,
   schemaPath,
-  mockFolder,
+  mockPath,
   ...rest
 }: GenerateServiceProps) => {
   const openAPI = await getOpenAPIConfig(schemaPath);
   const requestImportStatement = getImportStatement(requestLibPath);
   const serviceGenerator = new ServiceGenerator(
     {
-      namespace: 'API',
+      namespace: 'APITypes',
       requestImportStatement,
       enumStyle: 'string-literal',
       ...rest,
@@ -133,10 +133,10 @@ export const generateService = async ({
   );
   serviceGenerator.genFile();
 
-  if (mockFolder) {
+  if (mockPath) {
     await mockGenerator({
       openAPI,
-      mockFolder: mockFolder || './mocks/',
+      mockPath: mockPath || './mocks/',
     });
   }
 };

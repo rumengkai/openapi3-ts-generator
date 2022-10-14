@@ -166,9 +166,9 @@ export default {
 ${mockFunction.join('\n,')}
     }`)[0];
 };
-export type genMockDataServerConfig = { openAPI: any; mockFolder: string };
+export type genMockDataServerConfig = { openAPI: any; mockPath: string };
 
-const mockGenerator = async ({ openAPI, mockFolder }: genMockDataServerConfig) => {
+const mockGenerator = async ({ openAPI, mockPath }: genMockDataServerConfig) => {
   const openAPParse = new OpenAPIParserMock(openAPI);
   const docs = openAPParse.parser();
   const pathList = Object.keys(docs.paths);
@@ -212,12 +212,12 @@ const mockGenerator = async ({ openAPI, mockFolder }: genMockDataServerConfig) =
       return;
     }
     if (file.includes('/')) {
-      const dirName = dirname(join(mockFolder, `${file}.mock.ts`));
+      const dirName = dirname(join(mockPath, `${file}.mock.ts`));
       if (!fs.existsSync(dirName)) {
         fs.mkdirSync(dirName);
       }
     }
-    writeFile(mockFolder, `${file}.mock.ts`, genMockFiles(mockActionsObj[file]));
+    writeFile(mockPath, `${file}.mock.ts`, genMockFiles(mockActionsObj[file]));
   });
   Log('✅ 生成 mock 文件成功');
 };

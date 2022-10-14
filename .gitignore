@@ -42,3 +42,4 @@ servers
 mocks
 test/file-servers/
 /src/mock
+test/src/services

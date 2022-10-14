@@ -15,7 +15,7 @@ const { generateService } = require('openapi3-ts-generator')
 
 generateService({
   schemaPath: 'http://petstore.swagger.io/v2/swagger.json',
-  serversPath: './servers',
+  servicesPath: './services',
 })
 
 ```
@@ -34,9 +34,9 @@ npm run openapi
 | requestLibPath  | 否 | 自定义请求方法路径 | string | - |
 | requestImportStatement  | 否 | 自定义请求方法表达式 | string | - |
 | apiPrefix  | 否 | api 的前缀 | string | - |
-| serversPath  | 否 | 生成的文件夹的路径 | string | - |
+| servicesPath  | 否 | 生成的文件夹的路径 | string | - |
 | schemaPath  | 否 | openAPI 3.0 的地址 | string | - |
 | projectName  | 否 | 项目名称 | string | - |
-| namespace  | 否 | 命名空间名称 | string | API |
-| mockFolder  | 否 | mock目录 | string | - |
+| namespace  | 否 | 类型命名空间名称 | string | APITypes |
+| mockPath  | 否 | mock目录 | string | - |
 | enumStyle  | 否 | 枚举样式 | string-literal \| enum | string-literal |

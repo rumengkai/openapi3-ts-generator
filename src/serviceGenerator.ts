@@ -257,7 +257,7 @@ class ServiceGenerator {
   constructor(config: GenerateServiceProps, openAPIData: OpenAPIObject) {
     this.finalPath = '';
     this.config = {
-      projectName: 'api',
+      projectName: 'services',
       templatesFolder: join(__dirname, '../', 'templates'),
       ...config,
     };
@@ -302,7 +302,7 @@ class ServiceGenerator {
   }
 
   public genFile() {
-    const basePath = this.config.serversPath || './src/service';
+    const basePath = this.config.servicesPath || './src/service';
     try {
       const finalPath = join(basePath, this.config.projectName);
 

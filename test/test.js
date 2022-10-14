@@ -7,18 +7,18 @@ const openAPI = require('../dist/index');
 // const gen = async () => {
 //   await openAPI.generateService({
 //     schemaPath: `${__dirname}/example-files/swagger-get-method-params-convert-obj.json`,
-//     serversPath: './servers',
+//     servicesPath: './servers',
 //   });
 
 //   await openAPI.generateService({
 //     schemaPath: `${__dirname}/example-files/swagger-file-convert.json`,
-//     serversPath: './file-servers',
+//     servicesPath: './file-servers',
 //   });
 
 //   await openAPI.generateService({
 //     requestLibPath: "import request  from '@/request';",
 //     schemaPath: `${__dirname}/example-files/swagger-custom-hook.json`,
-//     serversPath: './servers',
+//     servicesPath: './servers',
 //     hook: {
 //         // 自定义类名
 //         customClassName: (tagName) => {
@@ -54,42 +54,42 @@ const openAPI = require('../dist/index');
 //   // await openAPI.generateService({
 //   //   // requestLibPath: "import request  from '@/request';",
 //   //   schemaPath: `http://82.157.33.9/swagger/swagger.json`,
-//   //   serversPath: './servers',
+//   //   servicesPath: './servers',
 //   // });
 //   // await openAPI.generateService({
 //   //   schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/CA1dOm%2631B/openapi.json',
-//   //   serversPath: './servers',
-//   //   mockFolder: './mocks',
+//   //   servicesPath: './servers',
+//   //   mockPath: './mocks',
 //   // });
 //   // await openAPI.generateService({
 //   //   schemaPath: 'http://petstore.swagger.io/v2/swagger.json',
-//   //   serversPath: './servers',
-//   //   mockFolder: './mocks',
+//   //   servicesPath: './servers',
+//   //   mockPath: './mocks',
 //   // });
 //   // await openAPI.generateService({
 //   //   schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/LyDMjDyIhK/1611471979478-opa.json',
-//   //   serversPath: './servers',
-//   //   mockFolder: './mocks',
+//   //   servicesPath: './servers',
+//   //   mockPath: './mocks',
 //   // });
 //   // await openAPI.generateService({
 //   //   schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/Zd7dLTHUjE/ant-design-pro.json',
-//   //   serversPath: './servers',
-//   //   mockFolder: './mocks',
+//   //   servicesPath: './servers',
+//   //   mockPath: './mocks',
 //   // });
 //   // await openAPI.generateService({
 //   //   schemaPath: `${__dirname}/morse-api.json`,
-//   //   serversPath: './servers',
-//   //   mockFolder: './mocks',
+//   //   servicesPath: './servers',
+//   //   mockPath: './mocks',
 //   // });
 //   // await openAPI.generateService({
 //   //   schemaPath: `${__dirname}/oc-swagger.json`,
-//   //   serversPath: './servers',
-//   //   mockFolder: './mocks',
+//   //   servicesPath: './servers',
+//   //   mockPath: './mocks',
 //   // });
 //   // await openAPI.generateService({
 //   //   schemaPath: `${__dirname}/java-api.json`,
-//   //   serversPath: './servers',
-//   //   mockFolder: './mocks',
+//   //   servicesPath: './servers',
+//   //   mockPath: './mocks',
 //   // });
 // };
 // gen();
@@ -97,16 +97,16 @@ const openAPI = require('../dist/index');
 
 openAPI.generateService({
   // schemaPath: 'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
-  requestLibPath: "import request from '@/utils/request';",
+  requestLibPath: "@/utils/request",
   schemaPath: 'http://smart-ops-sbx.jd.local/v3/api-docs',
-  serversPath: './servers',
-  mockFolder: './mocks',
+  servicesPath: './src',
+  mockPath: './mocks',
   // apiPrefix: '',
 });
 
 // openAPI.generateService({
 //   schemaPath: 'http://localhost:8800/v3/api-docs',
-//   serversPath: './servers',
-//   mockFolder: './mocks',
+//   servicesPath: './services',
+//   mockPath: './mocks',
 //   // apiPrefix: '',
 // });
